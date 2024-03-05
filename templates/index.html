@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+</head>
+<body>
+    <h1>Quiz</h1>
+    <form action="/quiz" method="post">
+        {% for question in questions %}
+        <p>{{ question.prompt }} <input type="text" name="{{ question.prompt.strip('? ') }}"></p>
+        {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
